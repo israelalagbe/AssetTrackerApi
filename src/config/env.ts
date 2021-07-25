@@ -10,6 +10,7 @@ interface Environment {
 const env: Environment = {
   name: process.env.NAME as Environment['name'],
   port: Number(process.env.PORT),
+  
 };
 
 export default env;
