@@ -14,6 +14,8 @@ const User = sequelize.define<UserInstance>("users", {
   name: {
     type: DataTypes.STRING,
   },
+}, {
+  timestamps: true,
 });
 
 export default User;

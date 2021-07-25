@@ -2,7 +2,7 @@ import { config } from "dotenv";
 config();
 console.log(process.env.HELLO)
 interface Environment {
-  name: "local" | "dev" | "staging" | "production";
+  name: "dev" | "staging" | "production";
   port: number;
   [key: string]: string | number;
 }
