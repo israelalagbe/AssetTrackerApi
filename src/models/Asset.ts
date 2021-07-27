@@ -21,11 +21,11 @@ const Asset = sequelize.define<AssetType>("assets", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  location_latitude: {
+  latitude: {
     type: DataTypes.STRING,
     allowNull: true
   },
-  location_longitude: {
+  longitude: {
     type: DataTypes.STRING,
     allowNull: true
   }

@@ -12,11 +12,11 @@ export const up = async (queryInterface: QueryInterface ) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      location_latitude: {
+      latitude: {
         type: DataTypes.STRING,
         allowNull: true
       },
-      location_longitude: {
+      longitude: {
         type: DataTypes.STRING,
         allowNull: true
       },
