@@ -1,18 +1,12 @@
-import express, { Router, Request, Response } from "express";
-import User from "../models/User";
+import { Router } from "express";
+import AssetController from "../controllers/asset.controller";
+import createAssetValidator from "../validators/create_asset.validator";
 
 const router = Router();
 
-router.get("/", async (req: Request, res: Response): Promise<Response> => {
-  await User.create({
-    name: "Israel"
-  })
-  const users = await User.findAll({});
-  console.log({users})
-  return res.status(200).send({
-    message: "Yo World!"
-  });
+const assetController = new AssetController();
 
-});
+router.get("/assets", assetController.getAssets);
+router.post("/assets", createAssetValidator(), assetController.createAsset);
 
 export default router;
