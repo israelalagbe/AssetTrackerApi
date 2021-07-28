@@ -5,8 +5,8 @@ import { v4 as uuidv4 } from "uuid";
 class Asset extends Model {
   id!: string;
   name!: string;
-  location_latitude!: string;
-  location_longitude!: string;
+  latitude!: string;
+  longitude!: string;
   createdAt!: string;
   updatedAt!: string;
 }

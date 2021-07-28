@@ -8,7 +8,7 @@ const validatorMiddleware = (req: Request, res: Response, next: NextFunction) =>
       for (const i of errors) {
         messages.push(i)
       }
-      return res.json({errors})
+      return res.status(400).json({errors})
     }
     return next();
 }
