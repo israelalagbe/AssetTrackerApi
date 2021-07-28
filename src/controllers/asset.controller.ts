@@ -23,8 +23,8 @@ class AssetController {
 
   public updateAssetLocation = async (req: Request, res: Response, next: NextFunction) => {
     const payload = {
-      latitude: req.body.latitude,
-      longitude: req.body.longitude,
+      latitude: String(req.body.latitude),
+      longitude: String(req.body.longitude),
     };
     const assetId = req.params.id;
 

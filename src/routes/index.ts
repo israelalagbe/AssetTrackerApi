@@ -12,6 +12,7 @@ router.get("/assets", assetController.getAssets);
 router.post("/assets", createAssetValidator(), assetController.createAsset);
 router.put("/assets/:id/location", updateAssetValidator(), assetController.updateAssetLocation);
 
+//Websocket route
 router.ws('/assets/:id/track',locationTrackerValidator, assetTrackerController.connect);
 
 export default router;
