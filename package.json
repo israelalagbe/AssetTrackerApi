@@ -10,7 +10,8 @@
     "test": "cross-env NODE_ENV=test jest --watchAll --testTimeout=7000 --detectOpenHandles --forceExit",
     "migrate": "tsc && sequelize db:migrate --env dev",
     "migrate:rollback": "tsc && sequelize db:migrate:undo --env dev",
-    "seed": "tsc && sequelize db:seed:all --env dev"
+    "seed": "tsc && sequelize db:seed:all --env dev",
+    "setup": "npm run migrate && npm run seed"
   },
   "repository": {
     "type": "git",
