@@ -11,4 +11,10 @@ router.get("/assets", assetController.getAssets);
 router.post("/assets", createAssetValidator(), assetController.createAsset);
 router.put("/assets/:id/location", updateAssetValidator(), assetController.updateAssetLocation);
 
+router.ws('/echo', function(ws, req) {
+  ws.on('message', function(msg) {
+    ws.send(msg + " res");
+  });
+});
+
 export default router;

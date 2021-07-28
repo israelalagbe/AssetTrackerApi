@@ -1,8 +1,7 @@
 import express, { Application, Request, Response } from "express";
 import env from "./config/env";
+import app from "./util/app";
 import indexRouter from "./routes/index";
-
-const app: Application = express();
 
 // Body parsing Middleware
 app.use(express.json());
