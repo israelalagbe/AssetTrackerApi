@@ -36,10 +36,9 @@ class AssetService {
     await asset.save();
 
     //Only broadcast location change event when the location actually changes
-    // if (oldLocation.latitude !== asset.latitude || oldLocation.longitude !== asset.longitude) {
-    //   eventEmitter.emit("location_change", asset);
-    // }
-    eventEmitter.emit("location_change", asset);
+    if (oldLocation.latitude !== asset.latitude || oldLocation.longitude !== asset.longitude) {
+      eventEmitter.emit("location_change", asset);
+    }
     return asset;
   }
 }
