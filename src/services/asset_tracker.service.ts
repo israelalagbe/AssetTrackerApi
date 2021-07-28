@@ -22,7 +22,10 @@ class AssetTrackerService {
     wsClient.send(
       JSON.stringify({
         event: "location_update",
-        data: asset,
+        data: {
+          latitude: asset.latitude,
+          longitude: asset.longitude
+        },
       })
     );
 
@@ -56,7 +59,10 @@ class AssetTrackerService {
       client.wsClient.send(
         JSON.stringify({
           event: "location_update",
-          data: asset,
+          data: {
+            latitude: asset.latitude,
+            longitude: asset.longitude
+          },
         })
       );
       client.lastBroadcast = Date.now();
