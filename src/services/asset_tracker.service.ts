@@ -4,9 +4,10 @@ import { v4 as uuidv4 } from "uuid";
 import { Client, Location } from "../types";
 import eventEmitter from "../util/event_emitter";
 import Asset from "../models/Asset";
+import { ray } from "node-ray";
 
 class AssetTrackerService {
-  private clients: Client[] = [];
+  public clients: Client[] = [];
 
   constructor(private assetService: AssetService) {
     this.setup();
@@ -46,12 +47,14 @@ class AssetTrackerService {
   }
 
   broadcastLocationChange = async (asset: Asset) => {
+
     const clients = this.clients.filter((client) => client.assetId === asset.id);
     for (const client of clients) {
       const throttleTimeout = 5000; // 5 seconds
 
       //Check if a broadcast has been sent within the last 5 seconds
       if (Date.now() - client.lastBroadcast < throttleTimeout) {
+        ray("throtlle", Date.now(), client.lastBroadcast )
         return;
       }
 

@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from "express";
+import { ray } from "node-ray";
 import Asset from "../models/Asset";
 import { Location } from "../types";
 import eventEmitter from "../util/event_emitter";
@@ -34,7 +35,7 @@ class AssetService {
     asset.latitude = data.latitude;
     asset.longitude = data.longitude;
     await asset.save();
-
+    
     //Only broadcast location change event when the location actually changes
     if (oldLocation.latitude !== asset.latitude || oldLocation.longitude !== asset.longitude) {
       eventEmitter.emit("location_change", asset);
