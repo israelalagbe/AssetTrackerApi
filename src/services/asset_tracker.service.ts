@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 import { Client, Location } from "../types";
 import eventEmitter from "../util/event_emitter";
 import Asset from "../models/Asset";
-import { ray } from "node-ray";
 
 class AssetTrackerService {
   public clients: Client[] = [];
@@ -54,7 +53,6 @@ class AssetTrackerService {
 
       //Check if a broadcast has been sent within the last 5 seconds
       if (Date.now() - client.lastBroadcast < throttleTimeout) {
-        ray("throtlle", Date.now(), client.lastBroadcast )
         return;
       }
 

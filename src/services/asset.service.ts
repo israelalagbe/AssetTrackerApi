@@ -1,5 +1,3 @@
-import { NextFunction, Request, Response } from "express";
-import { ray } from "node-ray";
 import Asset from "../models/Asset";
 import { Location } from "../types";
 import eventEmitter from "../util/event_emitter";
