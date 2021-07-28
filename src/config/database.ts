@@ -1,10 +1,19 @@
 module.exports = {
+  test: {
+    username: process.env.DATABASE_USERNAME!,
+    password: process.env.DATABASE_PASSWORD!,
+    database: process.env.DATABASE_NAME!,
+    host: process.env.DATABASE_HOST!,
+    dialect: process.env.DATABASE_DIALET!,
+    logging: false,
+    storage: ':memory:'
+  },
   dev: {
     username: process.env.DATABASE_USERNAME!,
     password: process.env.DATABASE_PASSWORD!,
     database: process.env.DATABASE_NAME!,
     host: process.env.DATABASE_HOST!,
-    dialect: 'mysql',
+    dialect: process.env.DATABASE_DIALET!,
     logging: false,
   },
   staging: {
@@ -12,7 +21,7 @@ module.exports = {
     password: process.env.DATABASE_PASSWORD!,
     database: process.env.DATABASE_NAME!,
     host: process.env.DATABASE_HOST!,
-    dialect: 'mysql',
+    dialect: process.env.DATABASE_DIALET!,
     logging: false,
   },
   production: {
@@ -20,7 +29,7 @@ module.exports = {
     password: process.env.DATABASE_PASSWORD!,
     database: process.env.DATABASE_NAME!,
     host: process.env.DATABASE_HOST!,
-    dialect: 'mysql',
+    dialect: process.env.DATABASE_DIALET!,
     logging: false,
     pool: {
       max: 5,

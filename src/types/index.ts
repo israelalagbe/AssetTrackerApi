@@ -11,3 +11,9 @@ export interface Client{
     assetId: string;
     lastBroadcast: number;
 }
+
+export interface Environment {
+    name: "dev" | "staging" | "production";
+    port: number;
+    [key: string]: string | number;
+}

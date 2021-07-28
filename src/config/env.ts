@@ -1,10 +1,11 @@
 import { config } from "dotenv";
-config();
-console.log(process.env.HELLO)
-interface Environment {
-  name: "dev" | "staging" | "production";
-  port: number;
-  [key: string]: string | number;
+import { Environment } from "../types";
+
+if(process.env.NODE_ENV === 'test'){
+  config({path: '.env.test'});
+}
+else {
+  config();
 }
 
 const env: Environment = {

@@ -102,7 +102,7 @@ class AssetTrackerService {
     const destLatitude = Number(dest.latitude);
     const destLongitude = Number(dest.longitude);
 
-    //using Haversine formula, calculate distance in a straight line
+    //using Haversine formula, calculate distance
     var p = Math.PI / 180;
     var cos = Math.cos;
     var a =
