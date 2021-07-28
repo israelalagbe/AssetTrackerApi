@@ -1,20 +1,16 @@
 import { Router } from "express";
-import AssetController from "../controllers/asset.controller";
+import { assetController, assetTrackerController } from "../controllers";
 import createAssetValidator from "../validators/create_asset.validator";
 import updateAssetValidator from "../validators/update_asset.validator copy";
 
 const router = Router();
 
-const assetController = new AssetController();
+
 
 router.get("/assets", assetController.getAssets);
 router.post("/assets", createAssetValidator(), assetController.createAsset);
 router.put("/assets/:id/location", updateAssetValidator(), assetController.updateAssetLocation);
 
-router.ws('/echo', function(ws, req) {
-  ws.on('message', function(msg) {
-    ws.send(msg + " res");
-  });
-});
+router.ws('/assets/:id/track', assetTrackerController.connect);
 
 export default router;

@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import AssetService from "../services/asset.service";
 
 class AssetController {
-  public assetService = new AssetService();
+  constructor(public assetService: AssetService) {}
 
   public getAssets = async (req: Request, res: Response, next: NextFunction) => {
     const assets = await this.assetService.findAllAssets();
