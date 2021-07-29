@@ -73,7 +73,7 @@ class AssetTrackerService {
 
     for (const client of clients) {
       const distance = this.distance(client.location, asset);
-      //Check for asset within 10 metres of client, having distance in multiple of 10
+      //Check for asset within 100 metres of client, having distance in multiple of 10
       if(distance <= 100 && distance % 10 === 0){
         //Send special proximity message to client
         client.wsClient.send(

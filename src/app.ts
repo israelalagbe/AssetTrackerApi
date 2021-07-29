@@ -10,12 +10,4 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRouter);
 
 
-// try {
-//   const port = env.port;
-//   app.listen(port, (): void => {
-//     console.log(`Connected successfully on port ${port}`);
-//   });
-// } catch (error) {
-//   console.error(`Error occured: ${error.message}`);
-// }
 export default app;
