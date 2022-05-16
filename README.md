@@ -1,4 +1,4 @@
-# Interview Test
+# Assets Tracker API
 
 ## Design and implement a node-js service that meets these criterias.
 
