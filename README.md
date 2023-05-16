@@ -20,8 +20,3 @@
 Three clients are A, B and C are connected to the service and listening for their asset proximity, the first two clients(A and B) stay 100 meters apart while the last client(C) is in the same location as the first. These three clients will always get notified when the asset position changes. In this scenario, the three clients are observing the same Asset
 
 When the asset is 100 meters away from the location of the first client, both the first and third client get notified about this proximity since they are on the same location, while the 2nd client is still 200 meters away at this point so no notification.
-
-### Test Criteria:
-* Use feature tests to demonstrate that the service meets the above criterias
-* Typescript is preferred over Javascript
-* We prefer slim controllers/transports, fat helpers/interactors
